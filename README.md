@@ -8,9 +8,9 @@
 
 <br>
 
-### Estimating, follow-up, and job workflow software for excavation contractors.
+### AI-assisted estimating, follow-up, and job workflow software for excavation contractors.
 
-**From the first inquiry to the finished job.**
+**Turn rough job information into a structured estimate, identify what is missing, produce the right customer document, and carry accepted work into the job.**
 
 <br>
 
@@ -23,239 +23,435 @@
 <br>
 
 <p align="center">
-  <img src="assets/app-flow.png" alt="Estivor estimating workflow" width="100%">
+  <img src="assets/app-flow.png" alt="Estivor AI-assisted estimating workflow" width="100%">
 </p>
 
 ---
 
 # What is Estivor?
 
-**Estivor is an AI-assisted estimating and customer workflow platform built around the way small excavation contractors actually work.**
+Estivor is an **AI-assisted estimating and customer workflow platform** being built around the way small excavation contractors actually work.
 
-A contractor may start with:
+A contractor rarely starts with perfectly structured data.
+
+A job might begin with:
 
 - a phone call
-- a few handwritten notes
-- a photo
+- handwritten notes
+- a text message
+- photos from a site visit
 - a sketch
-- a set of plans
-- an old estimate
-- or simply a description of the job
+- measurements
+- a PDF plan
+- an email from a builder
+- an older estimate
+- or a few rough sentences describing the work
 
-That information then needs to survive a much longer business process.
+Estivor is designed to take that messy starting point and help turn it into something useful.
 
 ```text
-Inquiry
-   ↓
-Customer
-   ↓
-Estimate
-   ↓
-Proposal
-   ↓
-Follow-up
-   ↓
-Accepted Work
-   ↓
-Job
-   ↓
-History
+ROUGH JOB INFORMATION
+        ↓
+AI-ASSISTED EXTRACTION
+        ↓
+STRUCTURED JOB DETAILS
+        ↓
+CLARIFY WHAT IS MISSING
+        ↓
+PRICE USING COMPANY RATES
+        ↓
+REVIEW
+        ↓
+BRANDED ESTIMATE / PROPOSAL
+        ↓
+FOLLOW-UP
+        ↓
+ACCEPTED WORK
+        ↓
+JOB
+        ↓
+HISTORY
 ```
 
-Most small contractors handle those stages across several disconnected tools.
+The goal is not to make contractors become CRM administrators.
 
-Estivor brings them together into one focused workflow.
+The goal is to hide the complexity behind a workflow that feels natural.
 
 ---
 
-# The problem
+# The core idea
 
-Small excavation companies often run customer work through a combination of:
+Most business software expects the user to organize the information first.
 
-| Today | What happens |
-|---|---|
-| 📞 Phone calls | Leads and job details live in someone's memory |
-| 💬 Text messages | Scope information gets scattered |
-| 📧 Email | Follow-up becomes difficult to track |
-| 📊 Spreadsheets | Pricing exists separately from customer history |
-| 📄 Word / PDF estimates | Information has to be recreated later |
-| 🧠 Memory | Important callbacks and next actions get missed |
+Estivor tries to reverse that relationship.
 
-Enterprise CRM and estimating platforms can solve parts of this problem.
+> **Give Estivor what you have. Let the system help organize it.**
 
-But for a small contractor, they are often too broad, too complicated, or too disconnected from how the company actually works.
+Instead of beginning with a long form full of empty fields, the estimator can begin with the information already available.
 
-Estivor takes a different approach:
+That could eventually mean:
 
-> **Keep the powerful workflow. Remove the unnecessary complexity.**
+```text
+Upload notes
+Upload photos
+Upload plans
+Paste an email
+Enter rough measurements
+Reuse an old estimate
+Describe the job
+        ↓
+Estivor helps make sense of it
+```
+
+AI is used as an **interpretation and organization layer**, not as an uncontrolled decision-maker.
+
+---
+
+# How AI fits into the workflow
+
+AI is most useful in Estivor before the estimate is fully structured.
+
+That is where contractor information is usually incomplete, inconsistent, or buried inside documents and notes.
+
+```mermaid
+flowchart LR
+    A["Notes · Photos · Plans · Emails · Messages"] --> B["AI-assisted extraction"]
+    B --> C["Known information"]
+    B --> D["Missing / uncertain information"]
+    D --> E["Clarifying questions"]
+    C --> F["Structured estimate"]
+    E --> F
+    F --> G["Company-controlled pricing"]
+    G --> H["Review"]
+    H --> I["Customer document"]
+```
+
+AI can assist with tasks such as:
+
+- extracting useful text from uploaded notes and documents
+- identifying customer and project information
+- recognizing likely scope items
+- finding quantities, dimensions, materials, and equipment references
+- separating known information from assumptions
+- identifying information that is still missing
+- generating focused clarification questions
+- organizing estimate line items
+- drafting scope descriptions
+- helping prepare assumptions and exclusions
+- finding relevant information in previous estimates
+- carrying estimate context into job planning
+
+The important distinction is:
+
+> **AI helps interpret the job. The company controls the business decisions.**
+
+---
+
+# AI does not invent the price
+
+Estivor is not intended to ask an AI model:
+
+> “What should this excavation cost?”
+
+and blindly send whatever number comes back.
+
+Pricing should come from company-controlled information such as:
+
+- labour rates
+- equipment rates
+- trucking rates
+- material costs
+- disposal costs
+- subcontractor costs
+- production assumptions
+- markup
+- historical company data
+
+The AI can help organize the estimate.
+
+The contractor controls the numbers.
+
+```text
+AI
+ └── helps understand the job
+
+ESTIVOR
+ └── structures the estimate
+
+COMPANY RATE DATA
+ └── determines the pricing
+
+CONTRACTOR
+ └── reviews and approves the result
+```
+
+That keeps the system useful without turning estimating into statistical roulette.
 
 ---
 
 # From rough notes to a finished estimate
 
-Estivor is designed around what the estimator already has.
-
-The user can begin with job information, plans, notes, photos, measurements, or previous work.
-
-Estivor then helps turn that information into a structured estimate.
+The estimator begins with whatever information already exists.
 
 <p align="center">
   <img src="assets/app-flow.png" alt="Estivor estimate workflow" width="100%">
 </p>
 
-The workflow is designed around four steps:
+The intended workflow has four main stages.
 
-### 1. Capture
+## 1. Capture
 
 Bring in the information already available.
 
-### 2. Clarify
+Examples:
 
-Identify what is known and ask only for information that is still required.
+- typed notes
+- uploaded documents
+- site photos
+- measurements
+- plans
+- customer messages
+- old estimates
 
-### 3. Price
+## 2. Clarify
 
-Apply company rates, quantities, equipment, labour, materials, and assumptions.
+Estivor helps determine:
 
-### 4. Present
+```text
+What do we know?
+What can we reasonably extract?
+What is uncertain?
+What is actually missing?
+```
 
-Generate the appropriate customer-facing estimate or proposal.
+Instead of forcing the estimator through dozens of fields, Estivor can ask focused questions only where information is required.
 
-The objective is not to make contractors become software operators.
+## 3. Price
 
-The objective is to make the software adapt to how they already estimate work.
+Once the scope is structured, Estivor applies company-controlled rates and costing.
 
----
+The estimate can include:
 
-# Branded customer documents
-
-The estimate should look like it came from the contractor.
-
-Not from Estivor.
-
-<p align="center">
-  <img src="assets/01-docs-branded.png" alt="Estivor branded estimate documents" width="100%">
-</p>
-
-Company branding is configured once and carried into customer-facing documents.
-
-This can include:
-
-- company logo
-- company name
-- contact information
-- brand colours
-- document style
-- estimate details
-- scope
-- exclusions
+- labour
+- equipment
+- materials
+- trucking
+- disposal
+- subcontractors
+- quantities
+- allowances
+- markup
 - assumptions
-- pricing
 
-The contractor's brand remains front and centre.
+## 4. Review & Present
+
+The estimator reviews the result before anything goes to the customer.
+
+Then Estivor produces the appropriate customer-facing document.
 
 ---
 
 # One estimate. Different readers.
 
-A homeowner and a general contractor do not need the same document.
+The numbers may be the same.
 
-Estivor separates the **estimate itself** from how that estimate is presented.
+The reader is not.
+
+A homeowner typically does not want the same document as a general contractor or commercial estimator.
 
 <p align="center">
   <img src="assets/03-branding.png" alt="Estivor document audience selection" width="100%">
 </p>
 
+Estivor separates the underlying estimate from how it is presented.
+
 | Audience | Presentation |
 |---|---|
 | **Homeowner** | Clear scope, grouped pricing, simple total |
 | **Builder / GC** | Detailed scope, quantities, unit rates, assumptions and exclusions |
-| **Commercial / Tender** | More formal bid structure and supporting information |
+| **Commercial / Tender** | Formal bid structure and supporting detail |
 
-The pricing does not need to be recreated just because the reader changes.
+That means:
+
+```text
+ONE ESTIMATE
+    ↓
+    ├── Homeowner document
+    ├── Builder / GC proposal
+    └── Commercial bid format
+```
+
+The estimator does not have to rebuild the job just because the reader changes.
 
 ---
 
-# Company branding
+# The contractor's brand stays front and centre
 
-Users can configure how their business appears on customer documents and preview the result.
+Estivor should disappear behind the contractor's business.
 
 <p align="center">
-  <img src="assets/02-branding.png" alt="Estivor company branding configuration" width="100%">
+  <img src="assets/01-docs-branded.png" alt="Estivor branded estimate documents" width="100%">
 </p>
 
-Estivor is intentionally designed to sit behind the contractor's business.
+Company branding can carry through the customer-facing documents:
 
-> **The customer should remember the contractor, not the estimating software.**
+- logo
+- company name
+- contact information
+- brand colours
+- document style
+- scope
+- assumptions
+- exclusions
+- pricing
+
+The customer should remember the contractor.
+
+Not the software that generated the PDF.
 
 ---
 
-# The estimate is not the end of the workflow
+# Branding and document preview
 
-An accepted estimate already contains valuable information:
+Users can configure how their company appears on estimates and preview the document before sending it.
 
-- customer
-- contact information
+<p align="center">
+  <img src="assets/02-branding.png" alt="Estivor company branding preview" width="100%">
+</p>
+
+Branding is configured once and reused throughout the workflow.
+
+---
+
+# Estivor is more than an estimate generator
+
+The information used to create an estimate becomes more valuable after the estimate is accepted.
+
+At that point Estivor already knows things such as:
+
+- the customer
+- project address
 - scope
 - quantities
+- equipment
+- materials
 - assumptions
-- pricing
-- notes
-- job location
 - exclusions
-- equipment requirements
+- notes
+- pricing
+- communications
 
-That information should not have to be recreated when the job begins.
+Throwing that information away and starting over in another system makes little sense.
+
+So the lifecycle continues.
 
 <p align="center">
   <img src="assets/wf-job.jpg" alt="Estivor job workflow" width="100%">
 </p>
 
-Estivor carries accepted work forward into the job lifecycle.
-
 ```text
-Estimate
+INQUIRY
    ↓
-Accepted
+ESTIMATE
    ↓
-Job
+ACCEPTED
    ↓
-Notes
+JOB
    ↓
-Next Actions
+NOTES
    ↓
-History
+NEXT ACTIONS
+   ↓
+HISTORY
 ```
 
-This creates the foundation for future job planning and project execution tools.
+This creates the foundation for future job planning and execution features.
 
 ---
 
-# Follow-up matters as much as estimating
+# Estimate → job planning
+
+Once an estimate becomes a job, much of the planning information already exists.
+
+Estivor can eventually help transform estimate information into an execution plan.
+
+For example:
+
+```text
+Estimate says:
+• 2 days excavator
+• 1 day skid steer
+• 8 loads export
+• 4 loads granular
+• drainage work
+• final grading
+
+                ↓
+
+Potential job plan:
+
+DAY 1
+• mobilize excavator
+• excavation
+• load/export material
+
+DAY 2
+• finish excavation
+• install drainage
+• granular placement
+
+DAY 3
+• skid steer grading
+• cleanup
+• final site review
+```
+
+The point is not to have AI invent the construction plan.
+
+The point is to reuse information the company already approved.
+
+---
+
+# Follow-up is part of the product
 
 For many small contractors, the biggest sales problem is not getting another lead.
 
-It is responding properly to the leads they already have.
+It is responding properly to the leads they already receive.
 
-Estivor includes a **Needs Attention** workflow for work such as:
+A missed call can disappear.
+
+An estimate can sit for three weeks.
+
+A callback can live entirely inside somebody's memory.
+
+Estivor includes a **Needs Attention** workflow so important work becomes visible.
+
+That can include:
 
 - missed calls
 - return-call tasks
+- new inquiries
 - estimates awaiting follow-up
 - overdue actions
-- scheduled notifications
 - customer communication
-- job next steps
+- scheduled reminders
+- job next actions
 
-The goal is simple:
-
-> Important work should become visible instead of depending on somebody remembering it.
+```text
+Something needs attention
+        ↓
+Estivor surfaces it
+        ↓
+User takes action
+        ↓
+Activity becomes part of the history
+```
 
 ---
 
-# Real-world missed-call workflow
+# Missed calls can become structured work
 
-Estivor can receive phone events from a business phone system and turn them into actionable customer work.
+Estivor can receive events from a business phone system and turn them into actionable customer records.
 
 ```mermaid
 flowchart LR
@@ -269,23 +465,44 @@ flowchart LR
     H --> I["Acknowledgement Queue"]
 ```
 
-A missed call can result in:
+A missed call can automatically result in:
 
-- the caller being matched to an existing contact
-- a new contact being created when necessary
-- an inquiry being created or reused
+- contact matching
+- contact creation when necessary
+- inquiry creation or reuse
 - a return-call task
 - a Needs Attention item
-- an outbound acknowledgement being queued
-- activity being added to customer history
+- an outbound acknowledgement
+- activity added to customer history
 
 The integration is designed to be **idempotent**, so retries do not create duplicate work.
 
 ---
 
+# One connected customer history
+
+The longer-term goal is for Estivor to maintain the useful history around a customer and their work.
+
+```text
+CUSTOMER
+   │
+   ├── Calls
+   ├── Messages
+   ├── Inquiries
+   ├── Estimates
+   ├── Follow-up
+   ├── Jobs
+   ├── Notes
+   └── History
+```
+
+Instead of searching through email, phone history, spreadsheets, and old PDFs, the information stays connected to the customer.
+
+---
+
 # Product architecture
 
-Estivor is a working production application, not only a frontend prototype.
+Estivor is deployed as a working production application rather than only a frontend prototype.
 
 ```mermaid
 flowchart TB
@@ -340,13 +557,13 @@ flowchart TB
 | Reverse Proxy | Nginx |
 | Process Management | systemd |
 | Testing | Vitest · Playwright |
-| CI | Automated test and build pipeline |
+| CI | Automated tests and builds |
 
 ---
 
 # Security architecture
 
-The production environment was intentionally designed to minimize exposed infrastructure.
+The production environment is intentionally designed to minimize exposed infrastructure.
 
 ```text
 Internet
@@ -355,40 +572,45 @@ Cloudflare
    ↓
 Cloudflare Tunnel
    ↓
-Local services only
+Local-only production services
 ```
-
-The application origin does not need to expose normal application or administrative services directly to the public Internet.
 
 Production controls include:
 
 - Cloudflare Tunnel
-- Cloudflare Access for administrative SSH access
+- Cloudflare Access protecting administrative SSH access
 - default-deny inbound firewall policy
 - local-only application listeners
-- production secrets stored outside the Git repository
+- production secrets stored outside the repository
 - Clerk authentication
 - server-side authorization
 - company/workspace isolation
 - scoped integration credentials
-- environment validation
+- production environment validation
 - scheduler health monitoring
 
 ---
 
-# Multi-tenant application design
+# Multi-company design
 
-Estivor is designed as a multi-company SaaS application.
+Estivor is designed as a multi-tenant SaaS product.
 
-Authentication answers:
+Authentication and authorization are intentionally separate.
 
-> **Who is this user?**
+```text
+CLERK
+Who is the user?
 
-Estivor authorization answers:
+       ↓
 
-> **Which company is this user allowed to access?**
+ESTIVOR MEMBERSHIP
+Which company can they access?
 
-Company membership is enforced separately from authentication so signing into Estivor does not automatically grant access to another company's data.
+       ↓
+
+WORKSPACE DATA
+What records are they allowed to see?
+```
 
 ```mermaid
 flowchart LR
@@ -400,80 +622,85 @@ flowchart LR
     C --> G["Jobs"]
 ```
 
+A successful login does not automatically grant access to another company's information.
+
 Workspace isolation is enforced server-side.
 
 ---
 
 # Background processing
 
-Estivor uses a recurring scheduler for work that should happen independently of a browser session.
+Some work needs to happen even when nobody has Estivor open in a browser.
+
+Estivor uses a recurring production scheduler.
 
 ```mermaid
 flowchart LR
     A["systemd Timer"] --> B["Scheduler Service"]
     B --> C["Scheduler API"]
 
-    C --> D["Due Tasks"]
-    C --> E["Notifications"]
-    C --> F["Outbound Messages"]
+    C --> D["Due Work"]
+    D --> E["Notifications"]
+    D --> F["Outbound Messages"]
+    D --> G["Follow-up"]
 
-    C --> G["SchedulerRun"]
-    G --> H["System Health"]
+    C --> H["SchedulerRun"]
+    H --> I["System Health"]
 ```
 
-The scheduler records a heartbeat in the application database.
+The scheduler records a heartbeat so the application can detect when background processing becomes stale.
 
-That means a failed scheduler becomes visible instead of silently stopping for several weeks until somebody wonders why nothing has happened. A surprisingly popular software architecture pattern.
+Silent failures are considerably less charming once customers are involved.
 
 ---
 
 # Engineering behind the product
 
-A large part of Estivor is not visible in screenshots.
+A large amount of the engineering work is intentionally invisible to the end user.
 
-The project includes work around:
-
-### Application architecture
+## Application
 
 - multi-company tenancy
-- customer and contact lifecycle
+- customer/contact lifecycle
 - inquiry/opportunity lifecycle
+- estimate workflow
 - estimate-to-job conversion
+- Needs Attention
 - activity history
-- Needs Attention workflow
-- notification queues
-- outbound communication queues
+- notifications
+- outbound communication queue
+- scheduled work
 
-### Integrations
+## Integrations
 
 - Ooma phone events
 - Zapier intake
-- workspace-scoped integration credentials
+- workspace-scoped credentials
 - phone normalization
+- idempotent event handling
 - retry-safe processing
-- idempotency
+- outbound SMS-ready architecture
 
-### Production operations
+## Production
 
-- database migrations
-- environment validation
+- PostgreSQL migrations
+- production environment validation
 - hardened Linux deployment
 - Cloudflare Tunnel
 - Nginx reverse proxy
-- systemd services
+- systemd process management
 - scheduled background processing
-- health monitoring
-- production logging
-- deployment runbooks
+- system health monitoring
+- deployment documentation
 - recovery procedures
 
-### Testing
+## Testing
 
 - unit tests
 - database integration tests
 - concurrency tests
-- Playwright browser tests
-- CI build validation
+- browser tests
+- CI validation
 
 ---
 
@@ -486,7 +713,7 @@ The project includes work around:
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma)
-![Clerk](https://img.shields.io/badge/Clerk-6C47FF?style=flat-square&logo=clerk&logoColor=white)
+![Clerk](https://img.shields.io/badge/Clerk-6C47FF?style=flat-square&logoColor=white)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?style=flat-square&logo=digitalocean&logoColor=white)
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
@@ -496,70 +723,119 @@ The project includes work around:
 
 ---
 
-# Why I built Estivor
+# Built vs. direction
 
-Estivor grew from working directly with an excavation company and seeing how customer information moved through the business.
+Estivor is under active development, so it is useful to separate the working application from the broader product direction.
 
-The company did not have a shortage of software options.
+## Working product foundation
 
-It had a shortage of software that fit the way the business actually operated.
+- customer/contact management
+- inquiries
+- estimates
+- jobs
+- Needs Attention
+- estimate-to-job lifecycle
+- activity history
+- branded estimate documents
+- multiple document audiences
+- missed-call intake
+- scheduled notifications/work
+- multi-company architecture
+- production deployment
+- scheduler health monitoring
 
-Estimating, customer follow-up, phone calls, job information, and documents were spread across different systems and individual people.
+## AI-assisted estimating direction
 
-The underlying idea behind Estivor became:
+The AI layer is being built to make the estimating workflow increasingly capable of working directly from unstructured contractor information.
 
-> **Take useful workflows that normally exist inside larger business systems, simplify them, and rebuild them around the needs of a specific industry.**
+This includes areas such as:
 
-Excavation is the starting point.
+- uploaded notes
+- PDF documents
+- plans
+- photos
+- customer messages
+- previous estimates
+- text extraction
+- information classification
+- missing-information detection
+- clarification questions
+- estimate drafting
+- scope language
+- assumptions and exclusions
 
----
-
-# Where Estivor is going
-
-The current product is focused around:
-
-```text
-INQUIRY
-   ↓
-ESTIMATE
-   ↓
-FOLLOW-UP
-   ↓
-ACCEPTED WORK
-   ↓
-JOB
-```
-
-The same information can eventually support a broader contractor operating system.
-
-### Planned direction
+## Longer-term workflow
 
 ```mermaid
 flowchart LR
-    A["Inquiry"] --> B["Estimate"]
+    A["Inquiry"] --> B["AI-assisted Estimate"]
     B --> C["Proposal"]
-    C --> D["Job"]
-    D --> E["Job Planning"]
-    E --> F["Execution"]
-    F --> G["Change Orders"]
-    G --> H["History & Cost Data"]
+    C --> D["Follow-up"]
+    D --> E["Job"]
+    E --> F["Job Planning"]
+    F --> G["Execution"]
+    G --> H["Change Orders"]
+    H --> I["History / Cost Data"]
 ```
 
-Potential future areas include:
+The goal is not to build every possible contractor feature.
 
-- job planning
-- crew and equipment planning
-- project execution
-- change orders
-- field notes
-- photos
-- customer communication
-- historical costing
-- operational reporting
+The goal is to keep reusing information instead of making the business enter it again.
 
-The goal is not to add as many features as possible.
+---
 
-The goal is to eliminate duplicated work as information moves through the business.
+# Why I built Estivor
+
+Estivor grew out of working directly with an excavation company and seeing how information actually moved through the business.
+
+The company did not suffer from a lack of software products.
+
+It suffered from information being spread across:
+
+- phone calls
+- texts
+- emails
+- spreadsheets
+- estimate documents
+- individual memory
+
+Traditional CRM and operations systems can solve many of these problems.
+
+But they often require the small contractor to adapt to the software.
+
+Estivor explores the reverse idea:
+
+> **Use AI, automation, and focused workflows to make powerful business systems usable without making the user understand the machinery underneath them.**
+
+The contractor should not need to understand:
+
+```text
+CRM schemas
+automation rules
+workflow engines
+document parsing
+AI prompts
+background jobs
+integration APIs
+```
+
+They should be able to:
+
+```text
+Tell Estivor about the job
+        ↓
+Answer what is missing
+        ↓
+Review the estimate
+        ↓
+Send it
+        ↓
+Follow up
+        ↓
+Run the job
+```
+
+That is the product.
 
 ---
 
@@ -582,19 +858,24 @@ The goal is to eliminate duplicated work as information moves through the busine
 </tr>
 
 <tr>
+<td><strong>AI workflow</strong></td>
+<td>Active product direction / staged implementation</td>
+</tr>
+
+<tr>
 <td><strong>Production source</strong></td>
 <td>Private</td>
 </tr>
 
 <tr>
-<td><strong>Public website</strong></td>
+<td><strong>Website</strong></td>
 <td><a href="https://estivor.com">estivor.com</a></td>
 </tr>
 </table>
 
 This repository is intentionally a **public product and engineering case study**.
 
-The production application source code, deployment configuration, credentials, customer information, and operational documentation remain private.
+The production source code, deployment configuration, credentials, operational documentation, and customer information remain private.
 
 ---
 
@@ -608,7 +889,9 @@ The production application source code, deployment configuration, credentials, c
   <img src="assets/logo-lockup.png" alt="Estivor" width="240">
 </picture>
 
-### Built for the work between the first inquiry and the finished job.
+### Give Estivor what you know about the job.
+
+### Let it help turn that information into the work that comes next.
 
 **[Visit Estivor →](https://estivor.com)**
 
